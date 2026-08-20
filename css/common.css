@@ -1,0 +1,24 @@
+
+.container{
+    width: 95% !important; 
+    max-width: 95% !important;
+}
+
+.spaceTB{
+    padding: 70px 0;
+}
+.badge1 {
+    padding: 5px 20px;
+    border: 1px solid #1b355e;
+    width: fit-content;
+    border-radius: 30px;
+    text-transform: capitalize;
+    font-size: 15px;
+    color: #1b355e;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
