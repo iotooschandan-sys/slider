@@ -1,0 +1,572 @@
+
+/* =========================================
+  IOGOOS SERVICE
+========================================= */
+
+    .iogoos-services {
+      --is-bg: #000;
+      --is-card: #151515;
+      --is-card-hover: #1b1b1b;
+      --is-text: #fff;
+      --is-muted: #a7a7a7;
+      --is-line: rgba(255, 255, 255, .14);
+      --is-green: #8fe59a;
+      --is-yellow: #f5cf36;
+      --is-max: 1290px;
+
+      position: relative;
+      width: 100%;
+      overflow: clip;
+      /* padding: 150px 24px 160px; */
+      background: var(--is-bg);
+      color: var(--is-text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* .iogoos-services__container {
+      width: min(100%, var(--is-max));
+      margin: 0 auto;
+    } */
+
+    .iogoos-services__heading {
+      margin: 0 0 65px;
+    }
+
+    .iogoos-services__heading .heading h2 {
+    color: #fff;
+}
+
+    .iogoos-services__heading>div:first-child {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 22px;
+      margin-bottom: 24px;
+    }
+.iogoos-services__container .heading h2{
+    color: #fff;
+}
+    .iogoos-services__heading>div:first-child::after {
+      content: "";
+      width: 9px;
+      height: 9px;
+      display: block;
+      border-radius: 50%;
+      background: var(--is-yellow);
+      box-shadow: 0 0 14px rgba(245, 207, 54, .25);
+    }
+
+    .iogoos-services__heading h4 {
+      margin: 0;
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.2;
+      font-weight: 500;
+      letter-spacing: .01em;
+    }
+
+    .iogoos-services__card-wrap {
+        position: relative;
+        /* min-height: 430px; */
+        margin-bottom: 0;
+        transition: margin-bottom 0.45s ease;
+        margin-top: -35px;
+    }
+   
+
+     .iogoos-services__card-wrap:hover {
+      margin-bottom: 25px;
+    }
+
+    .iogoos-services__card {
+      /* position: sticky;
+      top: 90px;
+      z-index: 1; */
+      width: 100%;
+      min-height: 190px;
+      /* margin: 0 0 62px; */
+      padding: 38px 42px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, .95fr);
+      align-items: center;
+      gap: 55px;
+
+      border: 1px solid #ffffff4a;
+      transition:
+        transform .45s cubic-bezier(.22, 1, .36, 1),
+        background .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+     cursor: pointer;
+     border-radius: 22px;
+      background: var(--is-card);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .25);
+    }
+/* 
+    .iogoos-services__card:hover {
+       border-radius: 22px;
+      background: var(--is-card);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .25);
+    } */
+   
+
+    
+    .iogoos-services__card:hover  .iogoos-services__btn {
+        transform: rotate(45deg);
+    }
+
+    .iogoos-services__card:nth-child(2) {
+      z-index: 2;
+    }
+
+    .iogoos-services__card:nth-child(3) {
+      z-index: 3;
+    }
+
+    .iogoos-services__card:nth-child(4) {
+      z-index: 4;
+    }
+
+    .iogoos-services__card.is-active,
+    .iogoos-services__card:hover,
+    .iogoos-services__card:focus-within {
+      /* background: var(--is-card-hover); */
+      transform: translateY(-3px);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, .48);
+      margin-top: 5px;
+    }
+    .iogoos-services__card.is-active {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, .95fr) !important;
+}
+
+    /* .iogoos-services__left {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    } */
+    .iogoos-services_head {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 5px;
+    }
+
+    .iogoos-services__icon {
+      width: 70px;
+      height: 70px;
+      flex: 0 0 70px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .28);
+      border-radius: 12px;
+      transition: background .35s ease, border-color .35s ease, transform .35s ease;
+    }
+    .iogoos-services__icon img {
+    width: 45px;
+}
+    .iogoos-services__icon i {
+        font-size: 30px;
+    }
+
+    .iogoos-services__icon span {
+      display: grid;
+      place-items: center;
+      line-height: 0;
+    }
+
+    .iogoos-services__icon svg {
+      display: block;
+      width: 40px;
+      height: 40px;
+    }
+
+    .iogoos-services__card.is-active .iogoos-services__icon,
+    .iogoos-services__card:hover .iogoos-services__icon,
+    .iogoos-services__card:focus-within .iogoos-services__icon {
+      background: #ffffff1a;
+      border-color: #ffffff80;
+      transform: scale(1.02);
+    }
+
+    .iogoos-services__title {
+      margin: 0;
+      font-size: clamp(42px, 4.2vw, 64px);
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: -.035em;
+      text-transform: uppercase;
+    }
+
+    .iogoos-services__title a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .iogoos-services__right {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      min-width: 0;
+    }
+
+    .iogoos-services__desc {
+      margin: 0;
+      max-width: 430px;
+      color: var(--is-muted);
+      font-size: 18px;
+      line-height: 1.45;
+      font-weight: 400;
+    }
+
+    .iogoos-services__btn {
+      flex: 0 0 auto;
+      transition: transform 0.45s ease;
+    }
+
+    .iogoos-services__btn a {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: transform .35s ease, background .35s ease;
+    }
+
+    .iogoos-services__btn svg {
+      width: 47px;
+      height: 40px;
+      display: block;
+    }
+
+    .iogoos-services__btn a:hover,
+    .iogoos-services__btn a:focus-visible {
+      transform: translate(4px, -4px);
+    }
+
+    .iogoos-services__btn a:focus-visible {
+      outline: 2px solid var(--is-yellow);
+      outline-offset: 5px;
+    }
+
+    /* The source has four cards, but this layout intentionally lets them
+   stack as the visitor scrolls, matching the supplied screenshot. */
+    /* .iogoos-services__card:nth-child(1) {
+      margin-bottom: 62px;
+    }
+
+    .iogoos-services__card:nth-child(2) {
+      margin-bottom: 62px;
+    }
+
+    .iogoos-services__card:nth-child(3) {
+      margin-bottom: 62px;
+    }
+
+    .iogoos-services__card:nth-child(4) {
+      margin-bottom: 0;
+    } */
+
+    
+
+
+    /* =========================================================
+   IOGOOS Services - corrected stacked cards + hover logo
+   ========================================================= */
+    .iogoos-services {
+        --is-stack-gap: 42px;
+        --is-logo-size: 128px;
+        border-top: 1px solid #ffffff4a;
+    }
+    /* The card stack */
+    .iogoos-services__card {
+      /* position: sticky;
+      top: 92px; */
+      /* margin-bottom: calc(var(--is-stack-gap) * -1); */
+      transform-origin: center top;
+      will-change: transform;
+    }
+
+    /* Keep card stacking below the floating logo */
+    .iogoos-services__card[data-service-card="1"] {
+      z-index: 1;
+    }
+
+    .iogoos-services__card[data-service-card="2"] {
+      z-index: 2;
+    }
+
+    .iogoos-services__card[data-service-card="3"] {
+      z-index: 3;
+    }
+
+    .iogoos-services__card[data-service-card="4"] {
+      z-index: 4;
+    }
+
+    /*
+  IMPORTANT:
+  The logo is intentionally above ALL cards.
+  This fixes the previous problem where the card's z-index
+  was covering the logo.
+*/
+    .iogoos-services__floating-logo {
+      position: absolute;
+      z-index: 9999 !important;
+      left: 0;
+      top: 0;
+      width: var(--is-logo-size);
+      height: var(--is-logo-size);
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: translate3d(0, 0, 0) scale(.65) rotate(-12deg);
+      transition:
+        opacity .22s ease,
+        visibility .22s ease,
+        transform .62s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .iogoos-services__floating-logo.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .iogoos-services__floating-logo-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      animation: iogoosLogoFloat 2.4s ease-in-out infinite;
+    }
+
+    .iogoos-services__floating-logo-mark {
+      width: 92px;
+      height: 92px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #111;
+      color: #f5cf36;
+      border: 5px solid #f5cf36;
+      font-size: 48px;
+      line-height: 1;
+      box-shadow:
+        0 0 0 7px rgba(255, 255, 255, .92),
+        0 14px 32px rgba(0, 0, 0, .42);
+    }
+
+    .iogoos-services__floating-logo-dot {
+      position: absolute;
+      right: 7px;
+      bottom: 14px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #f5cf36;
+      box-shadow: 0 0 16px rgba(245, 207, 54, .65);
+    }
+
+    @keyframes iogoosLogoFloat {
+
+      0%,
+      100% {
+        transform: translateY(-3px) rotate(-2deg);
+      }
+
+      50% {
+        transform: translateY(8px) rotate(2deg);
+      }
+    }
+
+    /*
+  When a card is hovered, keep it below the logo.
+  The logo should visually sit ON TOP of the card.
+*/
+    .iogoos-services__card:hover,
+    .iogoos-services__card:focus-within {
+      z-index: 50 !important;
+    }
+
+    /* Slightly stronger selected-card effect */
+    /* .iogoos-services__card.is-active {
+      background: #1b1b1b;
+      border-color: rgba(255, 255, 255, .10);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, .48);
+    } */
+
+    /* Tablet */
+    @media (max-width: 991px) {
+      .iogoos-services {
+        --is-logo-size: 100px;
+        --is-stack-gap: 28px;
+      }
+
+      .iogoos-services__floating-logo-mark {
+        width: 72px;
+        height: 72px;
+        font-size: 38px;
+      }
+
+      .iogoos-services__floating-logo-dot {
+        width: 9px;
+        height: 9px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 767px) {
+      .iogoos-services {
+        --is-logo-size: 78px;
+        --is-stack-gap: 20px;
+      }
+
+    .iogoos-services__card {
+        top: 62px;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .iogoos-services__desc {
+        font-size: 16px;
+    }
+    .iogoos-services__right {
+        display: block;
+    }
+    .iogoos-services__btn {
+        display: flex;
+        justify-content: end;
+    }
+    .iogoos-services__card:hover  .iogoos-services__btn {
+    transform: unset;
+}
+.iogoos-services__btn svg {
+    width: 23px;
+    height: 23px;
+    display: block;
+}
+.iogoos-services__btn a {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ffffff75;
+}
+.platform-hover-icon {
+    display: none !important;
+}
+.iogoos-services__title {
+    font-size: 25px;
+}
+
+      .iogoos-services__floating-logo-mark {
+        width: 58px;
+        height: 58px;
+        font-size: 28px;
+        border-width: 3px;
+        box-shadow:
+          0 0 0 4px rgba(255, 255, 255, .92),
+          0 8px 18px rgba(0, 0, 0, .3);
+      }
+
+      .iogoos-services__floating-logo-dot {
+        width: 7px;
+        height: 7px;
+        right: 5px;
+        bottom: 9px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .iogoos-services__floating-logo,
+      .iogoos-services__floating-logo-inner {
+        transition: none;
+        animation: none;
+      }
+    }
+
+
+    /* =========================================================
+   Best-for line + true mouse-follow award/logo interaction
+   ========================================================= */
+
+    .iogoos-services__best-for {
+      margin: 24px 0 0;
+      color: rgba(255, 255, 255, .68);
+      font-size: 17px;
+      line-height: 1.5;
+      letter-spacing: 0;
+    }
+
+    .iogoos-services__best-for strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /*
+  The logo is now controlled by pointer coordinates.
+  It is NOT locked to the card center.
+*/
+    .iogoos-services__floating-logo {
+      z-index: 9999 !important;
+      transition:
+        opacity .22s ease,
+        visibility .22s ease;
+      will-change: transform;
+    }
+
+    .iogoos-services__floating-logo-inner {
+      will-change: transform;
+    }
+
+    @media (max-width: 767px) {
+      .iogoos-services__best-for {
+        margin-top: 18px;
+        font-size: 14px;
+      }
+    }
+
+
+    .iogoos-services__card-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.platform-hover-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: #11111194;
+    border: 3px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 20;
+    transform: translate(-50%, -50%) scale(0);
+    transition: opacity 0.3s ease,
+        transform 0.3s ease;
+}
+.platform-hover-icon img {
+    width: 50px;
+}
+
+.platform-hover-icon i {
+    font-size: 42px;
+    color: #fff;
+}
+
+.iogoos-services__card-wrap:hover .platform-hover-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+/* =========================================
+  IOGOOS SERVICE END
+========================================= */
