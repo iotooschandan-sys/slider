@@ -426,6 +426,10 @@
         --is-stack-gap: 20px;
       }
 
+      .iogoos-services__card {
+    padding: 20px;
+}
+
     .iogoos-services__card {
         top: 62px;
         grid-template-columns: 1fr;

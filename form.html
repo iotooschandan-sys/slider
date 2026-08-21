@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hire Dedicated Developers</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+<style>
+
+    /* =========================================
+   RESET
+========================================= */
+
+.dh-section,
+.dh-section * {
+    box-sizing: border-box;
+}
+
+.dh-section {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+
+    padding: 50px 40px;
+
+    color: #fff;
+
+    background:
+        radial-gradient(
+            circle at 80% 55%,
+            rgba(42, 72, 190, .15),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(23, 68, 180, .10),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #020611 0%,
+            #030919 45%,
+            #020711 100%
+        );
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.dh-bg-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+}
+
+.dh-bg-glow-1 {
+    width: 350px;
+    height: 350px;
+    right: -120px;
+    bottom: -80px;
+
+    background: rgba(48, 72, 255, .16);
+}
+
+.dh-bg-glow-2 {
+    width: 250px;
+    height: 250px;
+    left: -100px;
+    top: 100px;
+
+    background: rgba(41, 89, 255, .10);
+}
+
+.dh-bg-line {
+    position: absolute;
+
+    width: 650px;
+    height: 250px;
+
+    right: -150px;
+    bottom: -100px;
+
+    border-top: 1px solid rgba(57, 105, 255, .35);
+    border-radius: 50%;
+
+    transform: rotate(-20deg);
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.dh-container {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 45px;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   LEFT
+========================================= */
+
+.dh-left {
+    padding: 5px 0;
+}
+
+.dh-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 6px 12px;
+
+    border-radius: 30px;
+
+    font-size: 10px;
+    letter-spacing: .5px;
+
+    color: #4da1ff;
+
+    background: rgba(12, 45, 105, .16);
+
+    border: 1px solid rgba(34, 103, 225, .25);
+}
+
+.dh-badge-icon {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(37, 91, 190, .15);
+}
+
+
+.dh-title {
+    margin: 18px 0 0;
+
+    font-size: 40px;
+    line-height: 1.04;
+
+    font-weight: 700;
+
+    letter-spacing: -1.5px;
+
+    color: #f7f8ff;
+}
+
+.dh-title span {
+    background:
+        linear-gradient(
+            90deg,
+            #1976ff,
+            #754cff,
+            #d13cff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.dh-subtitle {
+    margin-top: 14px;
+
+    font-size: 15px;
+
+    color: #c2cae0;
+}
+
+.dh-heading-line {
+    width: 42px;
+    height: 2px;
+
+    margin-top: 9px;
+
+    background: #367cff;
+
+    box-shadow: 0 0 10px rgba(47, 120, 255, .7);
+}
+
+
+.dh-description {
+    max-width: 500px;
+
+    margin-top: 14px;
+
+    color: #9fa8bd;
+
+    font-size: 11.5px;
+    line-height: 1.55;
+}
+
+.dh-description p {
+    margin: 0 0 12px;
+}
+
+.dh-description strong {
+    color: #c52dff;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.dh-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    margin-top: 12px;
+
+    overflow: hidden;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20, 39, 91, .58),
+            rgba(12, 25, 59, .58)
+        );
+
+    border: 1px solid rgba(68, 105, 180, .12);
+}
+
+.dh-feature {
+    min-height: 74px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.dh-feature:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 15px;
+
+    width: 1px;
+    height: 45px;
+
+    background: rgba(255, 255, 255, .06);
+}
+
+.dh-feature-icon {
+    margin-bottom: 5px;
+
+    font-size: 20px;
+}
+
+.dh-blue {
+    color: #3188ff;
+}
+
+.dh-pink {
+    color: #ff4b96;
+}
+
+.dh-purple {
+    color: #9b4dff;
+}
+
+.dh-green {
+    color: #00e5ae;
+}
+
+.dh-feature strong {
+    font-size: 11px;
+}
+
+.dh-feature small {
+    margin-top: 2px;
+
+    font-size: 8px;
+
+    color: #9da6ba;
+}
+
+
+/* =========================================
+   RATING
+========================================= */
+
+.dh-rating {
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+
+    margin-top: 12px;
+    padding: 0 12px;
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(22, 47, 104, .62),
+            rgba(18, 33, 76, .58)
+        );
+
+    border: 1px solid rgba(63, 102, 180, .12);
+}
+
+.dh-stars {
+    margin-right: 10px;
+
+    color: #ffd02f;
+
+    font-size: 16px;
+    letter-spacing: 1px;
+
+    text-shadow: 0 0 7px rgba(255, 208, 47, .4);
+}
+
+.dh-rating-text {
+    color: #c0c8da;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.dh-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 16px;
+}
+
+.dh-btn {
+    width: 190px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 8px 10px;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    transition: .3s ease;
+}
+
+.dh-btn:hover {
+    transform: translateY(-2px);
+}
+
+.dh-primary {
+    background:
+        linear-gradient(
+            110deg,
+            #1767ed,
+            #7b2cff
+        );
+}
+
+.dh-secondary {
+    border: 1px solid rgba(96, 119, 181, .45);
+
+    background: rgba(7, 17, 42, .5);
+}
+
+.dh-btn-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    font-size: 17px;
+
+    background: rgba(255, 255, 255, .08);
+}
+
+.dh-btn-content {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+
+    margin-left: 9px;
+}
+
+.dh-btn-content strong {
+    font-size: 10px;
+}
+
+.dh-btn-content small {
+    margin-top: 3px;
+
+    font-size: 8px;
+
+    color: #c1c8da;
+}
+
+.dh-arrow {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 9px;
+
+    background: rgba(255, 255, 255, .16);
+}
+
+
+/* =========================================
+   RIGHT FORM
+========================================= */
+
+.dh-right {
+    position: relative;
+}
+
+.dh-form-card {
+    position: relative;
+
+    padding: 35px 25px 25px;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(21, 38, 83, .80),
+            rgba(10, 18, 48, .78)
+        );
+
+    border: 1px solid transparent;
+
+    box-shadow:
+        inset 0 0 35px rgba(47, 82, 180, .10),
+        0 20px 60px rgba(0, 0, 0, .22);
+
+    backdrop-filter: blur(15px);
+}
+
+.dh-form-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    padding: 1px;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4c9aff,
+            #693dff,
+            #dc39e9
+        );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+
+    mask-composite: exclude;
+
+    pointer-events: none;
+}
+
+
+/* Plane */
+
+.dh-plane {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    font-size: 39px;
+
+    color: #578bff;
+
+    transform: rotate(-8deg);
+
+    filter:
+        drop-shadow(
+            0 0 5px rgba(76, 129, 255, .5)
+        );
+}
+
+
+/* Form heading */
+
+.dh-form-card h2 {
+    position: relative;
+
+    margin: 0 0 6px;
+
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.dh-form-card h2 span {
+    color: #7668ff;
+}
+
+.dh-form-subtitle {
+    position: relative;
+
+    margin: 0 0 18px;
+
+    font-size: 10px;
+
+    color: #aeb6ca;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.dh-form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+}
+
+.dh-input {
+    height: 42px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 5px;
+
+    background: rgba(26, 43, 88, .55);
+
+    border: 1px solid rgba(91, 118, 185, .18);
+}
+
+.dh-input:focus-within {
+    border-color: #4b7dff;
+
+    box-shadow:
+        0 0 0 2px rgba(75, 125, 255, .07);
+}
+
+.dh-input > i {
+    width: 14px;
+
+    flex-shrink: 0;
+
+    margin-left: 10px;
+
+    color: #c7d1e6;
+
+    font-size: 13px;
+}
+
+.dh-input input,
+.dh-input select {
+    width: 100%;
+    height: 100%;
+
+    padding: 0 9px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #e7ebf5;
+
+    font-size: 10px;
+}
+
+.dh-input input::placeholder {
+    color: #c0c7d7;
+}
+
+.dh-input select {
+    appearance: none;
+
+    cursor: pointer;
+}
+
+.dh-input select option {
+    color: #111827;
+    background: #fff;
+}
+
+.dh-select {
+    padding-right: 25px;
+}
+
+.dh-select-arrow {
+    position: absolute;
+
+    right: 10px;
+
+    width: auto !important;
+
+    margin: 0 !important;
+
+    font-size: 9px !important;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   TEXTAREA
+========================================= */
+
+.dh-textarea {
+    position: relative;
+
+    height: 100px;
+
+    display: flex;
+
+    margin-bottom: 15px;
+
+    border-radius: 5px;
+
+    background: rgba(26, 43, 88, .55);
+
+    border: 1px solid rgba(91, 118, 185, .18);
+}
+
+.dh-textarea > i {
+    margin: 13px 0 0 10px;
+
+    color: #c6cee1;
+
+    font-size: 13px;
+}
+
+.dh-textarea textarea {
+    width: 100%;
+    height: 100%;
+
+    padding: 12px 10px;
+
+    resize: none;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #fff;
+
+    font-family: inherit;
+
+    font-size: 10px;
+}
+
+.dh-textarea textarea::placeholder {
+    color: #c0c7d7;
+}
+
+.dh-counter {
+    position: absolute;
+
+    right: 10px;
+    bottom: 7px;
+
+    font-size: 8px;
+
+    color: #8f98ad;
+}
+
+
+/* =========================================
+   UPLOAD
+========================================= */
+
+.dh-upload {
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+    border-radius: 5px;
+
+    border: 1px dashed rgba(101, 128, 190, .4);
+
+    background: rgba(11, 26, 61, .22);
+
+    color: #9faed0;
+
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.dh-upload > i {
+    font-size: 17px;
+}
+
+.dh-upload strong {
+    display: block;
+
+    font-size: 10px;
+
+    font-weight: 500;
+}
+
+.dh-upload span {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 9px;
+}
+
+.dh-upload b {
+    color: #638bff;
+}
+
+
+/* =========================================
+   SUBMIT
+========================================= */
+
+.dh-submit {
+    position: relative;
+
+    width: 100%;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    color: #fff;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    background:
+        linear-gradient(
+            100deg,
+            #1769ee,
+            #742dff,
+            #c22ce9
+        );
+
+    transition: .3s ease;
+}
+
+.dh-submit:hover {
+    transform: translateY(-2px);
+}
+
+.dh-submit i {
+    position: absolute;
+
+    right: 10px;
+
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .2);
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   PRIVACY
+========================================= */
+
+.dh-privacy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    margin-top: 12px;
+
+    font-size: 8px;
+
+    color: #a5aec2;
+}
+
+
+/* =========================================
+   ENQUIRY
+========================================= */
+
+.dh-enquiry {
+    position: fixed;
+
+    z-index: 50;
+
+    top: 48%;
+    right: 0;
+
+    width: 31px;
+    height: 138px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px 0 0 7px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #1b6dff,
+            #7b27e9
+        );
+
+    box-shadow:
+        0 5px 20px rgba(80, 40, 255, .3);
+}
+
+.dh-enquiry span {
+    position: absolute;
+
+    white-space: nowrap;
+
+    transform: rotate(-90deg);
+
+    font-size: 10px;
+
+    letter-spacing: .5px;
+}
+
+.dh-enquiry i {
+    position: absolute;
+
+    bottom: 8px;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .dh-section {
+        padding: 40px 25px;
+    }
+
+    .dh-container {
+        grid-template-columns: 1fr;
+
+        max-width: 700px;
+    }
+
+    .dh-title {
+        font-size: 38px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .dh-section {
+        padding: 30px 15px;
+    }
+
+    .dh-title {
+        font-size: 32px;
+    }
+
+    .dh-subtitle {
+        font-size: 13px;
+    }
+
+    .dh-features {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dh-buttons {
+        flex-direction: column;
+    }
+
+    .dh-btn {
+        width: 100%;
+    }
+
+    .dh-form-card {
+        padding: 30px 15px 20px;
+    }
+
+    .dh-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .dh-plane {
+        font-size: 30px;
+    }
+
+    .dh-enquiry {
+        display: none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="dh-section">
+
+    <div class="dh-bg-glow dh-bg-glow-1"></div>
+    <div class="dh-bg-glow dh-bg-glow-2"></div>
+    <div class="dh-bg-line"></div>
+
+    <div class="dh-container">
+
+        <!-- LEFT -->
+        <div class="dh-left">
+
+            <div class="dh-badge">
+                <span class="dh-badge-icon">
+                    <i class="fa-solid fa-users"></i>
+                </span>
+                YOUR TRUSTED DEVELOPMENT PARTNER
+            </div>
+
+            <h1 class="dh-title">
+                Hire Dedicated
+                <br>
+                Developers <span>From India</span>
+            </h1>
+
+            <div class="dh-subtitle">
+                Top 3% Pre-Vetted, Dedicated Web &amp; App Developers
+            </div>
+
+            <div class="dh-heading-line"></div>
+
+            <div class="dh-description">
+                <p>
+                    Hire top-rated, dedicated developers from India to bring
+                    your business ideas to life. At IOGOOS Solution, our team
+                    of skilled developers specializes in creating high-
+                    performance, user-friendly websites &amp; mobile apps
+                    tailored to your needs.
+                </p>
+
+                <p>
+                    With our cost-effective solutions, you can
+                    <strong>save up to 40%</strong> annually on development
+                    costs while accessing top-tier talent from the top 3%
+                    of the industry. Whether you need web development, mobile
+                    app development, or custom software solutions, our experts
+                    ensure seamless collaboration, fast delivery, and the
+                    highest quality standards.
+                </p>
+            </div>
+
+            <!-- FEATURES -->
+            <div class="dh-features">
+
+                <div class="dh-feature">
+                    <div class="dh-feature-icon dh-blue">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <strong>Top 3%</strong>
+                    <small>Pre-Vetted Talent</small>
+                </div>
+
+                <div class="dh-feature">
+                    <div class="dh-feature-icon dh-pink">
+                        <i class="fa-solid fa-piggy-bank"></i>
+                    </div>
+                    <strong>40% Cost</strong>
+                    <small>Savings Every Year</small>
+                </div>
+
+                <div class="dh-feature">
+                    <div class="dh-feature-icon dh-purple">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <strong>On-Time</strong>
+                    <small>Delivery</small>
+                </div>
+
+                <div class="dh-feature">
+                    <div class="dh-feature-icon dh-green">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <strong>100%</strong>
+                    <small>Quality Guarantee</small>
+                </div>
+
+            </div>
+
+            <!-- RATING -->
+            <div class="dh-rating">
+                <div class="dh-stars">★★★★★</div>
+                <div class="dh-rating-text">
+                    5 / 5 stars based on 1100+ reviews
+                </div>
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="dh-buttons">
+
+                <a href="#" class="dh-btn dh-primary">
+
+                    <span class="dh-btn-icon">
+                        <i class="fa-regular fa-user"></i>
+                    </span>
+
+                    <span class="dh-btn-content">
+                        <strong>HIRE A TALENT</strong>
+                        <small>Get Started in 24 Hours</small>
+                    </span>
+
+                    <span class="dh-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+
+                </a>
+
+                <a href="#" class="dh-btn dh-secondary">
+
+                    <span class="dh-btn-icon">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </span>
+
+                    <span class="dh-btn-content">
+                        <strong>VIEW PORTFOLIO</strong>
+                        <small>See Our Work</small>
+                    </span>
+
+                    <span class="dh-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT -->
+        <div class="dh-right">
+
+            <div class="dh-form-card">
+
+                <div class="dh-plane">
+                    <i class="fa-regular fa-paper-plane"></i>
+                </div>
+
+                <h2>
+                    REQUEST A <span>QUOTE</span> NOW
+                </h2>
+
+                <p class="dh-form-subtitle">
+                    Get in touch with us and see how your business can benefit.
+                </p>
+
+                <form class="dh-form">
+
+                    <div class="dh-form-row">
+
+                        <div class="dh-input">
+                            <i class="fa-regular fa-user"></i>
+                            <input type="text" placeholder="Full Name">
+                        </div>
+
+                        <div class="dh-input">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email" placeholder="Email Address">
+                        </div>
+
+                    </div>
+
+                    <div class="dh-form-row">
+
+                        <div class="dh-input">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" placeholder="Phone Number">
+                        </div>
+
+                        <div class="dh-input dh-select">
+                            <i class="fa-regular fa-circle-question"></i>
+
+                            <select>
+                                <option>I need help with*</option>
+                                <option>Web Development</option>
+                                <option>App Development</option>
+                                <option>UI/UX Design</option>
+                                <option>Custom Software</option>
+                            </select>
+
+                            <i class="fa-solid fa-chevron-down dh-select-arrow"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="dh-form-row">
+
+                        <div class="dh-input dh-select">
+                            <i class="fa-solid fa-wallet"></i>
+
+                            <select>
+                                <option>My Budget is about*</option>
+                                <option>$1,000 - $5,000</option>
+                                <option>$5,000 - $10,000</option>
+                                <option>$10,000+</option>
+                            </select>
+
+                            <i class="fa-solid fa-chevron-down dh-select-arrow"></i>
+                        </div>
+
+                        <div class="dh-input dh-select">
+                            <i class="fa-solid fa-globe"></i>
+
+                            <select>
+                                <option>Country</option>
+                                <option>India</option>
+                                <option>USA</option>
+                                <option>UK</option>
+                                <option>Canada</option>
+                            </select>
+
+                            <i class="fa-solid fa-chevron-down dh-select-arrow"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="dh-textarea">
+                        <i class="fa-regular fa-message"></i>
+
+                        <textarea
+                            maxlength="1000"
+                            placeholder="Describe your project"
+                        ></textarea>
+
+                        <span class="dh-counter">0/1000</span>
+                    </div>
+
+                    <div class="dh-upload">
+                        <i class="fa-solid fa-paperclip"></i>
+
+                        <div>
+                            <strong>DRAG &amp; DROP FILES HERE</strong>
+                            <span>or <b>Browse Files</b></span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="dh-submit">
+                        <span>SUBMIT REQUEST</span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <div class="dh-privacy">
+                        <i class="fa-solid fa-lock"></i>
+                        We respect your privacy. Your information is safe with us.
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ENQUIRY -->
+    <div class="dh-enquiry">
+        <span>ENQUIRY NOW</span>
+        <i class="fa-solid fa-comment-dots"></i>
+    </div>
+
+</section>
+
+<script>
+
+    const textarea = document.querySelector("textarea");
+    const counter = document.querySelector(".counter");
+
+    textarea.addEventListener("input", function () {
+        counter.textContent = this.value.length + "/1000";
+    });
+
+</script>
+
+</body>
+</html>
