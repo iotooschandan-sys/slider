@@ -1,7 +1,13 @@
-
+* {
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 .container{
     width: 95% !important; 
     max-width: 95% !important;
+    margin: 0 auto;
 }
 
 .spaceTB{
