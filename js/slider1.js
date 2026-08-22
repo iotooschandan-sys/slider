@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
 
     const cards = Array.from(
@@ -42,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "position-hidden-left",
             "position-hidden-right"
         );
+
     }
 
 
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const total = cards.length;
 
 
-        // Remove all old classes
+        // Remove old classes
         cards.forEach(function (card) {
 
             resetPositions(card);
@@ -62,18 +62,50 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-        /* =====================================
+        /* =========================================
+           MOBILE
+           ONLY ONE CARD SHOW
+        ========================================= */
+
+        if (window.innerWidth < 768) {
+
+            // Active card center
+            cards[activeIndex].classList.add(
+                "position-center"
+            );
+
+
+            // Hide all other cards
+            cards.forEach(function (card, index) {
+
+                if (index !== activeIndex) {
+
+                    card.classList.add(
+                        "position-hidden-right"
+                    );
+
+                }
+
+            });
+
+
+            return;
+        }
+
+
+        /* =========================================
+           DESKTOP
            CENTER CARD
-        ===================================== */
+        ========================================= */
 
         cards[activeIndex].classList.add(
             "position-center"
         );
 
 
-        /* =====================================
+        /* =========================================
            LEFT SIDE
-        ===================================== */
+        ========================================= */
 
         const left1 =
             (activeIndex - 1 + total) % total;
@@ -98,9 +130,9 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* =====================================
+        /* =========================================
            RIGHT SIDE
-        ===================================== */
+        ========================================= */
 
         const right1 =
             (activeIndex + 1) % total;
@@ -125,9 +157,9 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* =====================================
+        /* =========================================
            HIDDEN CARDS
-        ===================================== */
+        ========================================= */
 
         const visibleCards = [
             activeIndex,
@@ -271,6 +303,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         clearInterval(autoSlide);
 
+
         autoSlide = setInterval(
             function () {
 
@@ -334,9 +367,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (track) {
 
-        /* -------------------------------------
+        /* -----------------------------------------
            TOUCH START
-        ------------------------------------- */
+        ----------------------------------------- */
 
         track.addEventListener(
             "touchstart",
@@ -352,9 +385,9 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* -------------------------------------
+        /* -----------------------------------------
            TOUCH END
-        ------------------------------------- */
+        ----------------------------------------- */
 
         track.addEventListener(
             "touchend",
@@ -376,9 +409,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                /* -------------------------------
+                /* ---------------------------------
                    SWIPE LEFT → NEXT
-                -------------------------------- */
+                --------------------------------- */
 
                 if (distance > 0) {
 
@@ -387,9 +420,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                /* -------------------------------
+                /* ---------------------------------
                    SWIPE RIGHT → PREVIOUS
-                -------------------------------- */
+                --------------------------------- */
 
                 else {
 
@@ -407,6 +440,33 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     }
+
+
+    /* =========================================
+       WINDOW RESIZE
+       MOBILE ↔ DESKTOP
+    ========================================= */
+
+    let resizeTimer;
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            clearTimeout(resizeTimer);
+
+
+            resizeTimer = setTimeout(
+                function () {
+
+                    updateCards();
+
+                },
+                150
+            );
+
+        }
+    );
 
 
     /* =========================================

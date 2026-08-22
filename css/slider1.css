@@ -85,9 +85,11 @@
     margin-bottom: 35px;
 }
 
-.industry-heading h2{
+.industry-heading h2 {
     color: #fff;
-    font-size: 60px;
+    font-size: 55px;
+    line-height: 1.1;
+    font-weight: bold;
 }
 
 .industry-label {
@@ -188,45 +190,35 @@
 /* =====================================
    CARD BASE
 ===================================== */
-
 .industry-card {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 230px;
-    height: 435px;
+    width: 180px;
+    height: 390px;
     padding: 25px 20px;
     overflow: hidden;
     cursor: pointer;
     border-radius: 15px;
     border: 1px solid rgba(75, 139, 255, 0.45);
-   background-image:
-        linear-gradient(
+    background-image: linear-gradient(
             180deg,
             rgba(4, 14, 35, 0.15),
             rgba(2, 7, 20, 0.80)
         ),
         url("../img/hm.png");
-
     background-size: cover;
     background-position: center;
-
     opacity: 0;
-
     transform-origin: center center;
-
-    transition:
-        left 0.65s cubic-bezier(.22,.61,.36,1),
+    transition: left 0.65s cubic-bezier(.22,.61,.36,1),
         transform 0.65s cubic-bezier(.22,.61,.36,1),
         width 0.65s ease,
         height 0.65s ease,
         opacity 0.5s ease,
         box-shadow 0.6s ease;
-
     z-index: 1;
 }
-
-
 /* Dark overlay */
 
 .industry-card::before {
@@ -252,22 +244,22 @@
 ===================================== */
 
 .industry-card.position-left-3 {
-    left: 10%;
+    left: 7%;
     opacity: 2;
     transform: translate(-50%, -50%)
         perspective(1000px)
-        rotateY(31deg)
+        rotateY(22deg)
         rotateZ(0deg)
         scale(0.92);
     z-index: 2;
 }
 
 .industry-card.position-left-2 {
-    left: 20%;
+    left: 19%;
     opacity: 0.9;
     transform: translate(-50%, -50%)
         perspective(1000px)
-        rotateY(29deg)
+        rotateY(24deg)
         rotateZ(0deg)
         scale(0.95);
     z-index: 3;
@@ -278,7 +270,7 @@
     opacity: 3;
     transform: translate(-50%, -50%)
         perspective(1000px)
-        rotateY(25deg)
+        rotateY(13deg)
         rotateZ(0deg)
         scale(0.95);
     z-index: 4;
@@ -290,8 +282,8 @@
 
 .industry-card.position-center {
     left: 50%;
-    width: 345px;
-    height: 455px;
+    width: 308px;
+    height: 400px;
     opacity: 1;
     transform: translate(-50%, -50%)
         perspective(1000px)
@@ -310,33 +302,33 @@
 ===================================== */
 
 .industry-card.position-right-2 {
-    left: 80%;
+    left: 81%;
     opacity: 2;
     transform: translate(-50%, -50%)
         perspective(1000px)
-        rotateY(-27deg)
+        rotateY(-22deg)
         rotateZ(0deg)
         scale(0.95);
     z-index: 3;
 }
 
 .industry-card.position-right-3 {
-    left: 90%;
+    left: 93%;
     opacity: 0.8;
     transform: translate(-50%, -50%)
         perspective(1000px)
-        rotateY(-30deg)
+        rotateY(-19deg)
         rotateZ(0deg)
         scale(0.92);
     z-index: 2;
 }
 
 .industry-card.position-right-1 {
-    left: 70%;
+    left: 69%;
     opacity: 3;
     transform: translate(-50%, -50%)
         perspective(1000px)
-        rotateY(-23deg)
+        rotateY(-12deg)
         rotateZ(0deg)
         scale(0.92);
     z-index: 4;
@@ -774,8 +766,6 @@ color: #fff;
 
     .industry-section {
         min-height: auto;
-
-        padding: 45px 15px 30px;
     }
 
     .industry-label {
@@ -891,3 +881,53 @@ color: #fff;
 /* ===================================================================================
    ---------------------------------------Curve slide Section END 
 ==================================================================================== */
+
+
+
+
+
+/* ======================================================================================================
+   ---------------------------------------Responsive
+======================================================================================================== */
+
+
+@media(max-width:375px){
+
+.industry-heading h2 {
+    font-size: 25px;
+}
+.stat-content strong {
+    font-size: 20px;
+}
+.industry-stats {
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    gap: 10px;
+}
+.industry-stat {
+    padding: 10px 0;
+    gap: 6px;
+    display: block;
+}
+.stat-icon {
+    height: 30px;
+    flex: 0 0 30px;
+    font-size: 14px;
+    width: 30px;
+    margin-bottom: 5px;
+}
+.industry-stat:last-child {
+    border-bottom: revert-rule;
+}
+.industry-arrow {
+    width: 25px;
+    height: 25px;
+    font-size: 11px;
+}
+.industry-card.position-center {
+    width: 95%;
+}
+
+}
+
+
