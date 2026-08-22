@@ -38,3 +38,12 @@ ul {
 h2{
     font-size: 40px !important;
 }
+
+
+@media (max-width:575px){
+.spaceTB {
+    padding: 50px 0;
+}
+
+
+}
