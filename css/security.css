@@ -722,6 +722,7 @@
 
             .security-header .heading h2 {
                 letter-spacing: 0;
+                line-height: 1;
             }
             .security-header {
                 margin-bottom: 20px;
@@ -845,21 +846,21 @@
             }
 
             .chart span:nth-child(1)  { left: 4% !important; }
-            .chart span:nth-child(2)  { left: 9% !important; }
-            .chart span:nth-child(3)  { left: 14% !important; }
-            .chart span:nth-child(4)  { left: 18% !important; }
-            .chart span:nth-child(5)  { left: 22% !important; }
-            .chart span:nth-child(6)  { left: 26% !important; }
-            .chart span:nth-child(7)  { left: 30% !important; }
-            .chart span:nth-child(8)  { left: 34% !important; }
-            .chart span:nth-child(9)  { left: 38% !important; }
-            .chart span:nth-child(10) { left: 42% !important; }
-            .chart span:nth-child(11) { left: 46% !important; }
-            .chart span:nth-child(12) { left: 50% !important; }
-            .chart span:nth-child(13) { left: 54% !important; }
-            .chart span:nth-child(14) { left: 58% !important; }
-            .chart span:nth-child(15) { left: 62% !important; }
-            .chart span:nth-child(16) { left: 66% !important; }
+            .chart span:nth-child(2)  { left: 10% !important; }
+            .chart span:nth-child(3)  { left: 16% !important; }
+            .chart span:nth-child(4)  { left: 22% !important; }
+            .chart span:nth-child(5)  { left: 28% !important; }
+            .chart span:nth-child(6)  { left: 34% !important; }
+            .chart span:nth-child(7)  { left: 39% !important; }
+            .chart span:nth-child(8)  { left: 45% !important; }
+            .chart span:nth-child(9)  { left: 51% !important; }
+            .chart span:nth-child(10) { left: 56% !important; }
+            .chart span:nth-child(11) { left: 62% !important; }
+            .chart span:nth-child(12) { left: 67% !important; }
+            .chart span:nth-child(13) { left: 73% !important; }
+            .chart span:nth-child(14) { left: 79% !important; }
+            .chart span:nth-child(15) { left: 84% !important; }
+            .chart span:nth-child(16) { left: 90% !important; }
 
             .dashboard-top {
                 padding: 0 14px;
@@ -941,3 +942,11 @@
 
 /* chat css  End*/
 }
+
+@media (max-width:375px){
+   .chart_score li, .chart_month li {
+    font-size: 10px;
+}
+}
+
+

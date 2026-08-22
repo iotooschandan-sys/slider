@@ -39,10 +39,46 @@ h2{
     font-size: 40px !important;
 }
 
+.animateBtn3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 50px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid #052351;
+    color: #ffffff;
+    background-color: #052351;
+    background-size: 0 100%;
+    background-image: -webkit-gradient(linear, right top, left top, from(#ffffff), to(#ffffff));
+    background-repeat: no-repeat;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    border-radius: 5px;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
 
 @media (max-width:575px){
 .spaceTB {
     padding: 50px 0;
+}
+
+h2{
+    font-size: 25px !important;
 }
 
 
