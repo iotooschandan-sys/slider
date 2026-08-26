@@ -1,27 +1,88 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    /* =========================================
+       ELEMENTS
+    ========================================= */
+
     const cards = Array.from(
         document.querySelectorAll(".industry-card")
     );
 
-    const nextButton = document.querySelector(".industry-next");
-    const prevButton = document.querySelector(".industry-prev");
-    const track = document.querySelector(".industry-track");
+    const nextButton =
+        document.querySelector(".industry-next");
 
-    // Stop if cards are not found
-    if (!cards.length) return;
+    const prevButton =
+        document.querySelector(".industry-prev");
+
+    const track =
+        document.querySelector(".industry-track");
+
+    const counter =
+        document.querySelector(".industry-count");
+
+    const progressBar =
+        document.querySelector(".industry-progress-bar");
+
+
+    /* =========================================
+       STOP IF CARDS NOT FOUND
+    ========================================= */
+
+    if (!cards.length) {
+        return;
+    }
 
 
     /* =========================================
        SETTINGS
     ========================================= */
 
-    // Card 4 initially center mein
-    let activeIndex = 3;
+    // 4th card initially center
+    let activeIndex = Math.min(3, cards.length - 1);
 
     let autoSlide = null;
 
     const AUTO_SPEED = 4000;
+
+
+    /* =========================================
+       UPDATE COUNTER
+    ========================================= */
+
+    function updateCounter() {
+
+        const total = cards.length;
+
+        const current = activeIndex + 1;
+
+
+        /* -----------------------------------------
+           Counter
+        ----------------------------------------- */
+
+        if (counter) {
+
+            counter.textContent =
+                current + " / " + total;
+
+        }
+
+
+        /* -----------------------------------------
+           Progress bar
+        ----------------------------------------- */
+
+        if (progressBar) {
+
+            const percentage =
+                (current / total) * 100;
+
+            progressBar.style.width =
+                percentage + "%";
+
+        }
+
+    }
 
 
     /* =========================================
@@ -54,7 +115,34 @@ document.addEventListener("DOMContentLoaded", function () {
         const total = cards.length;
 
 
-        // Remove old classes
+        if (!total) {
+            return;
+        }
+
+
+        /* -----------------------------------------
+           Keep activeIndex valid
+        ----------------------------------------- */
+
+        if (activeIndex < 0) {
+
+            activeIndex =
+                total - 1;
+
+        }
+
+
+        if (activeIndex >= total) {
+
+            activeIndex = 0;
+
+        }
+
+
+        /* -----------------------------------------
+           Remove old classes
+        ----------------------------------------- */
+
         cards.forEach(function (card) {
 
             resetPositions(card);
@@ -64,18 +152,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         /* =========================================
            MOBILE
-           ONLY ONE CARD SHOW
         ========================================= */
 
         if (window.innerWidth < 768) {
 
-            // Active card center
             cards[activeIndex].classList.add(
                 "position-center"
             );
 
 
-            // Hide all other cards
             cards.forEach(function (card, index) {
 
                 if (index !== activeIndex) {
@@ -89,13 +174,15 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
 
+            // Update counter
+            updateCounter();
+
             return;
         }
 
 
         /* =========================================
-           DESKTOP
-           CENTER CARD
+           DESKTOP CENTER
         ========================================= */
 
         cards[activeIndex].classList.add(
@@ -158,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /* =========================================
-           HIDDEN CARDS
+           VISIBLE CARDS
         ========================================= */
 
         const visibleCards = [
@@ -172,44 +259,58 @@ document.addEventListener("DOMContentLoaded", function () {
         ];
 
 
+        /* =========================================
+           HIDDEN CARDS
+        ========================================= */
+
         cards.forEach(function (card, index) {
 
-            if (!visibleCards.includes(index)) {
+            if (visibleCards.includes(index)) {
 
-                const distance =
-                    (index - activeIndex + total) % total;
+                return;
+
+            }
 
 
-                if (distance > total / 2) {
+            const distance =
+                (index - activeIndex + total) % total;
 
-                    card.classList.add(
-                        "position-hidden-left"
-                    );
 
-                } else {
+            if (distance > total / 2) {
 
-                    card.classList.add(
-                        "position-hidden-right"
-                    );
+                card.classList.add(
+                    "position-hidden-left"
+                );
 
-                }
+            } else {
+
+                card.classList.add(
+                    "position-hidden-right"
+                );
 
             }
 
         });
+
+
+        /* -----------------------------------------
+           UPDATE COUNTER
+        ----------------------------------------- */
+
+        updateCounter();
 
     }
 
 
     /* =========================================
        NEXT SLIDE
-       RIGHT 1 → CENTER
     ========================================= */
 
     function nextSlide() {
 
         activeIndex =
             (activeIndex + 1) % cards.length;
+
 
         updateCards();
 
@@ -218,7 +319,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* =========================================
        PREVIOUS SLIDE
-       LEFT 1 → CENTER
     ========================================= */
 
     function previousSlide() {
@@ -227,6 +327,7 @@ document.addEventListener("DOMContentLoaded", function () {
             (activeIndex - 1 + cards.length)
             % cards.length;
 
+
         updateCards();
 
     }
@@ -234,7 +335,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* =========================================
        CARD CLICK
-       CLICKED CARD → CENTER
     ========================================= */
 
     cards.forEach(function (card, index) {
@@ -243,7 +343,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function () {
 
-                activeIndex = index;
+                activeIndex =
+                    index;
+
 
                 updateCards();
 
@@ -263,7 +365,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         nextButton.addEventListener(
             "click",
-            function () {
+            function (event) {
+
+                event.preventDefault();
 
                 nextSlide();
 
@@ -283,7 +387,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         prevButton.addEventListener(
             "click",
-            function () {
+            function (event) {
+
+                event.preventDefault();
 
                 previousSlide();
 
@@ -299,21 +405,22 @@ document.addEventListener("DOMContentLoaded", function () {
        START AUTO SLIDE
     ========================================= */
 
-    function startAutoSlide() {
+    // function startAutoSlide() {
 
-        clearInterval(autoSlide);
+    //     clearInterval(autoSlide);
 
 
-        autoSlide = setInterval(
-            function () {
+    //     autoSlide =
+    //         setInterval(
+    //             function () {
 
-                nextSlide();
+    //                 nextSlide();
 
-            },
-            AUTO_SPEED
-        );
+    //             },
+    //             AUTO_SPEED
+    //         );
 
-    }
+    // }
 
 
     /* =========================================
@@ -444,10 +551,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* =========================================
        WINDOW RESIZE
-       MOBILE ↔ DESKTOP
     ========================================= */
 
     let resizeTimer;
+
 
     window.addEventListener(
         "resize",
@@ -456,14 +563,15 @@ document.addEventListener("DOMContentLoaded", function () {
             clearTimeout(resizeTimer);
 
 
-            resizeTimer = setTimeout(
-                function () {
+            resizeTimer =
+                setTimeout(
+                    function () {
 
-                    updateCards();
+                        updateCards();
 
-                },
-                150
-            );
+                    },
+                    150
+                );
 
         }
     );

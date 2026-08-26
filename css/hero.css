@@ -385,6 +385,10 @@ body{
     font-size: 12px;
 }
 
+.btn-icon-img {
+    width: 23px;
+}
+
 
 /* =========================================================
    TRUST ACTIONS
@@ -429,17 +433,6 @@ body{
     border-color: #aebbd0;
 }
 
-.trust-action__icon {
-    width: 27px;
-    height: 27px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 7px;
-
-    background: #f0f4f9;
-}
 
 .trust-action__icon svg {
     width: 16px;
@@ -537,6 +530,7 @@ body{
     margin-right: -55px;
 
     overflow: visible;
+    margin-top: 45px;
 }
 
 
@@ -691,7 +685,7 @@ body{
 .feature_cards {
     position: absolute;
     right: 0;
-    top: 50px;
+    top: 65px;
 }
 
 .feature-card__icon {

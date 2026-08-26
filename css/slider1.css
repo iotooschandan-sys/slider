@@ -201,12 +201,7 @@
     cursor: pointer;
     border-radius: 15px;
     border: 1px solid rgba(75, 139, 255, 0.45);
-    background-image: linear-gradient(
-            180deg,
-            rgba(4, 14, 35, 0.15),
-            rgba(2, 7, 20, 0.80)
-        ),
-        url("../img/hm.png");
+    background-image: linear-gradient(180deg, rgb(4 14 35 / 0%), rgb(2 7 20 / 10%)), url(../img/hm.png);
     background-size: cover;
     background-position: center;
     opacity: 0;
@@ -220,7 +215,7 @@
     z-index: 1;
 }
 /* Dark overlay */
-
+/* 
 .industry-card::before {
     content: "";
 
@@ -236,7 +231,7 @@
         );
 
     z-index: 0;
-}
+} */
 
 
 /* =====================================
@@ -436,7 +431,7 @@
 }
 
 .industry-card-content p {
-    margin: 0 0 20px;
+    margin: 0 0 10px;
     color: #d1d7e6;
     font-size: 13px;
     line-height: 1.65;
@@ -446,7 +441,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #318fff;
+    color: #fff;
 
     text-decoration: none;
 
@@ -523,7 +518,7 @@
 
     gap: 18px;
 
-    margin: 5px auto 30px;
+    margin: 8px auto 30px;
 
     color: #bfc6dd;
 
@@ -559,48 +554,6 @@
    SLIDER ARROWS
 ===================================== */
 
-.industry-arrow {
-    position: absolute;
-
-    top: 50%;
-
-    width: 45px;
-    height: 45px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(120, 150, 255, 0.65);
-
-    background: rgba(8, 20, 55, 0.75);
-
-    color: #fff;
-
-    cursor: pointer;
-
-    z-index: 20;
-
-    transform: translateY(-50%);
-
-    backdrop-filter: blur(10px);
-
-    transition: 0.3s ease;
-}
-
-.industry-arrow:hover {
-    background: #175cff;
-
-    box-shadow:
-        0 0 25px rgba(30, 100, 255, 0.75);
-
-    transform:
-        translateY(-50%)
-        scale(1.08);
-}
 
 .industry-prev {
     left: 0;
@@ -618,7 +571,6 @@
     position: relative;
     z-index: 10;
     width: 100%;
-    max-width: 1200px;
     margin: auto;
     padding: 25px 20px;
     display: grid;
@@ -630,7 +582,7 @@
             rgba(8, 28, 65, 0.95),
             rgba(4, 14, 38, 0.95)
         );
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 .industry-stat {
@@ -883,6 +835,72 @@ color: #fff;
 ==================================================================================== */
 
 
+.industry-navigation {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.industry-count {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 40px;
+    white-space: nowrap;
+}
+
+.industry-progress {
+    position: relative;
+    flex: 1;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.35);
+    overflow: hidden;
+}
+
+.industry-progress-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 2px;
+    width: 0;
+    background: #fff;
+    transition: width 0.4s ease;
+}
+
+.industry-arrow {
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 17px;
+    line-height: 1;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.industry-arrow:hover {
+    color: #fff;
+    background: transparent;
+}
+
+.industry-prev:hover {
+    transform: translateX(-2px);
+}
+
+.industry-next:hover {
+    transform: translateX(2px);
+}
 
 
 
