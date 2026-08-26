@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* =========================================
+   PF BUTTONS
+========================================= */
+
+.pf-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* =========================================
+   COMMON
+========================================= */
+
+.pf-btn {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    height: 40px;
+    padding: 0 18px;
+
+    border-radius: 5px;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+
+    text-decoration: none;
+
+    overflow: hidden;
+
+    transition:
+        color 0.45s ease,
+        border-color 0.45s ease;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   HOVER FILL
+========================================= */
+
+.pf-btn::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    transform: scaleX(0);
+    transform-origin: left center;
+
+    transition:
+        transform 0.45s cubic-bezier(.77, 0, .18, 1);
+
+    z-index: -1;
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.pf-icon {
+    position: relative;
+    z-index: 2;
+
+    font-size: 16px;
+
+    transition:
+        color 0.4s ease,
+        transform 0.4s ease;
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.pf-btn > span:last-child {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================
+   LEFT BUTTON
+========================================= */
+
+.pf-primary {
+    color: #fff;
+
+    background: #1557e8;
+
+    border: 1px solid #1557e8;
+}
+
+
+.pf-primary::before {
+    background: #fff;
+}
+
+
+.pf-primary:hover {
+    color: #1557e8;
+}
+
+
+.pf-primary:hover::before {
+    transform: scaleX(1);
+}
+
+
+.pf-primary:hover .pf-icon {
+    transform: translate(3px, -2px);
+}
+
+
+/* =========================================
+   RIGHT BUTTON
+========================================= */
+
+.pf-secondary {
+    color: #1557e8;
+
+    background: #fff;
+
+    border: 1px solid #1557e8;
+}
+
+
+.pf-secondary::before {
+    background: #1557e8;
+}
+
+
+.pf-secondary:hover {
+    color: #fff;
+}
+
+
+.pf-secondary:hover::before {
+    transform: scaleX(1);
+}
+
+
+.pf-secondary:hover .pf-icon {
+    transform: scale(1.08);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .pf-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pf-btn {
+        width: 100%;
+    }
+
+}
+    </style>
+</head>
+<body>
+    
+<div class="pf-buttons">
+
+    <a href="#" class="pf-btn pf-primary">
+        <span class="pf-icon">
+            <i class="fa-solid fa-arrow-up-right"></i>
+        </span>
+        <span>BUILD YOUR ENTERPRISE STORE</span>
+    </a>
+
+    <a href="#" class="pf-btn pf-secondary">
+        <span class="pf-icon">
+            <i class="fa-regular fa-comment"></i>
+        </span>
+        <span>DISCUSS YOUR PROJECT</span>
+    </a>
+
+</div>
+
+</body>
+</html>
