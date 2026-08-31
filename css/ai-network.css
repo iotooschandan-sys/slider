@@ -535,9 +535,7 @@ img.ai_logo {
     position: absolute;
     top: 0;
     bottom: 0;
-
-    width: 320px;
-
+    width: 398px;
     pointer-events: none;
     z-index: 1;
 }
@@ -555,7 +553,7 @@ img.ai_logo {
 
 .connections span {
     position: absolute;
-    width: 297px;
+    width: 340px;
     height: 70px;
     border-top: 1px dashed rgb(107 77 206);
     border-right: 1px dashed rgb(107 77 206 / 80%);
@@ -575,7 +573,6 @@ img.ai_logo {
     top: 180px;
     right: 41px;
     transform: rotate(0deg);
-    width: 174px;
     height: 22px;
 }
 
@@ -583,7 +580,6 @@ img.ai_logo {
     top: 280px;
     right: 66px;
     transform: rotate(0deg);
-    width: 148px;
     height: 0;
 }
 
@@ -620,14 +616,12 @@ img.ai_logo {
 }
 .connections--right span:nth-child(2) {
     top: 180px;
-    width: 175px;
     left: 37px;
     height: 18px;
 }
 
 .connections--right span:nth-child(3) {
     top: 279px;
-    width: 149px;
     left: 64px;
     height: 0;
 }
@@ -641,7 +635,6 @@ img.ai_logo {
     border-bottom: 1px dashed rgb(107 77 206);
     border-top: 0;
     border-radius: 0 0 0 25px;
-    width: 255px;
     left: -37px;
 }
 
